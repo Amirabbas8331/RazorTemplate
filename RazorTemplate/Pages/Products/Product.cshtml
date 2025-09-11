@@ -1,0 +1,60 @@
+﻿@page "{Name?}"
+@model RazorTemplate.Pages.ProductModel
+@{
+    ViewData["Title"] = "Product";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+
+<!-- Search Form -->
+<form method="post" class="mb-5 p-4 bg-light border rounded">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label asp-for="SearchName" class="form-label">Product Name</label>
+            <input asp-for="SearchName" class="form-control" placeholder="Enter product name" />
+        </div>
+        <div class="col-md-6">
+            <label asp-for="SearchCategoryId" class="form-label">Category ID</label>
+            <input asp-for="SearchCategoryId" type="number" class="form-control" placeholder="Enter category ID" />
+        </div>
+    </div>
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-search"></i> Search
+        </button>
+    </div>
+</form>
+
+<!-- Product Grid -->
+<div class="row g-4">
+    @if (Model.Products != null && Model.Products.Any())
+    {
+        foreach (var item in Model.Products)
+        {
+            <div class="col-sm-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text mb-1"><strong>ID:</strong> @item.Id</p>
+                        <p class="card-text mb-1"><strong>Price:</strong> <span class="text-success">@item.Price.ToString("C")</span></p>
+                        <p class="card-text"><strong>Category:</strong> @item.category.Name (@item.category.Id)</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                        <button class="btn btn-danger w-100">
+                            <i class="bi bi-eye"></i> View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-12">
+            <div class="alert alert-warning text-center">
+                No products found.
+            </div>
+        </div>
+    }
+</div>

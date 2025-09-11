@@ -1,0 +1,11 @@
+﻿@page "{Id?}"
+@model RazorTemplate.Pages.CategoryModel
+@{
+    ViewData["Title"] = "Category";
+}
+<h1>@ViewData["Title"]</h1>
+<ul>
+    <li>
+        @Model.Name
+    </li>
+</ul>

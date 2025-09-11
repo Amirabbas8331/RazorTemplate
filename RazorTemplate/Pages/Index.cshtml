@@ -1,0 +1,81 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "MyStore";
+}
+
+<!-- Top Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#">MyStore</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <form method="get" class="d-flex mx-auto w-50">
+                <input asp-for="SearchName" class="form-control me-2" type="search" placeholder="Search products...">
+                <button class="btn btn-primary">Search</button>
+            </form>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/Login">Login</a></li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="#">
+                        <i class="bi bi-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section class="container my-5">
+    <h2 class="mb-4 fw-bold">Search Results</h2>
+
+    @if (Model.Products?.Any() == true)
+    {
+        <div class="row g-4">
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-6 col-md-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text text-danger fw-bold">@product.Price.ToString("C")</p>
+                            <a href="/Product/Details/@product.Id" class="btn btn-sm btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            No products found matching "<strong>@Model.SearchName</strong>".
+        </div>
+    }
+</section>
+
+
+
+
+
+<!-- Category Menu -->
+<div class="bg-light border-top border-bottom">
+    <div class="container py-2 d-flex flex-wrap justify-content-center gap-3">
+        <a href="/AllProducts/Mobile" class="text-dark text-decoration-none">Mobiles</a>
+        <a href="/AllProducts/Laptop" class="text-dark text-decoration-none">Laptops</a>
+        <a href="/AllProducts/Mobile" class="text-dark text-decoration-none">Accessories</a>
+        <a href="/AllProducts/Mobile" class="text-dark text-decoration-none">Gaming</a>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+        <p class="mb-0">&copy; 2025 MyStore. All rights reserved.</p>
+    </div>
+</footer>
