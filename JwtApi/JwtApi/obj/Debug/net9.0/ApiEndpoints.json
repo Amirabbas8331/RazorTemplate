@@ -1,0 +1,103 @@
+[
+  {
+    "ContainingType": "JwtApi.Api.Users.UserEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMap\u003Eb__2_3",
+    "RelativePath": "users/{id:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Users"
+    ]
+  },
+  {
+    "ContainingType": "JwtApi.Api.Users.UserEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMap\u003Eb__2_1",
+    "RelativePath": "users/login",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "JwtApi.Api.Users.LoginUser\u002BRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Users"
+    ]
+  },
+  {
+    "ContainingType": "JwtApi.Api.Users.UserEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMap\u003Eb__2_0",
+    "RelativePath": "users/register",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "JwtApi.Api.Users.RegisterUser\u002BRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Users"
+    ]
+  },
+  {
+    "ContainingType": "JwtApi.Api.Users.UserEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMap\u003Eb__2_2",
+    "RelativePath": "users/verify-email",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Users"
+    ],
+    "EndpointName": "VerifyEmail"
+  }
+]

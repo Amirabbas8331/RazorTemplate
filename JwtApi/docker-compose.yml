@@ -1,0 +1,12 @@
+services:
+  jwtapi:
+    image: ${DOCKER_REGISTRY-}jwtapi
+    build:
+      context: .
+      dockerfile: JwtApi/Dockerfile
+  amirabbas.papercut:
+    image: changemakerstudiosus/papercut-smtp:latest
+    container_name: Amirabbas.Papercut
+    ports:
+      - 8080:80
+      - 587:587
