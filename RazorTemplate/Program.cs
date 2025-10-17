@@ -1,11 +1,39 @@
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
 using RazorTemplate.Context;
+using RazorTemplate.CustomHealthCheck;
+using RazorTemplate.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddProblemDetails(option =>
+{
+    option.CustomizeProblemDetails = context =>
+    {
+        var problem = new ProblemDetailsContext()
+        {
+         HttpContext=context.HttpContext,
+          AdditionalMetadata = context.AdditionalMetadata,
+           Exception = context.Exception,
+            ProblemDetails=new ProblemDetails()
+            {
+              Status=StatusCodes.Status400BadRequest
+            }
+        
+        };
+};
+});
+builder.Services.AddHealthChecks()
+    .AddCheck<SqlHealthCheck>("custom-sql",HealthStatus.Unhealthy)
+    .AddRedis("Redis Connectionstring")
+    .AddNpgSql("Database Connectionstring");
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<ShopDbConext>(option=>option.UseNpgsql(builder.Configuration.GetConnectionString("Shop")));
 builder.Services.AddHttpClient();
@@ -48,9 +76,12 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
 app.UseHttpsRedirection();
-
+app.MapHealthChecks("/healthCheck",
+    new HealthCheckOptions()
+    {
+     ResponseWriter= UIResponseWriter.WriteHealthCheckUIResponse
+    });
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();

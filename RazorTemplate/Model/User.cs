@@ -8,4 +8,5 @@ public class User
     public string LastName { get; set; }
     public string PasswordHash { get; set; }
     public bool EmailVerified { get; set; }
+
 }

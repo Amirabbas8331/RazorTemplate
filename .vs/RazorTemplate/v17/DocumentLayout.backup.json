@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Repos\\RazorTemplate\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2D9CA849-B8DB-4F70-9D23-916343AE3598}|RazorTemplate\\RazorTemplate.csproj|e:\\repos\\razortemplate\\razortemplate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D9CA849-B8DB-4F70-9D23-916343AE3598}|RazorTemplate\\RazorTemplate.csproj|solutionrelative:razortemplate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D9CA849-B8DB-4F70-9D23-916343AE3598}|RazorTemplate\\RazorTemplate.csproj|e:\\repos\\razortemplate\\razortemplate\\customhealthcheck\\sqlhealthcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D9CA849-B8DB-4F70-9D23-916343AE3598}|RazorTemplate\\RazorTemplate.csproj|solutionrelative:razortemplate\\customhealthcheck\\sqlhealthcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Repos\\RazorTemplate\\RazorTemplate\\Program.cs",
+              "RelativeDocumentMoniker": "RazorTemplate\\Program.cs",
+              "ToolTip": "E:\\Repos\\RazorTemplate\\RazorTemplate\\Program.cs*",
+              "RelativeToolTip": "RazorTemplate\\Program.cs*",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAAFIAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T20:47:49.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SqlHealthCheck.cs",
+              "DocumentMoniker": "E:\\Repos\\RazorTemplate\\RazorTemplate\\CustomHealthCheck\\SqlHealthCheck.cs",
+              "RelativeDocumentMoniker": "RazorTemplate\\CustomHealthCheck\\SqlHealthCheck.cs",
+              "ToolTip": "E:\\Repos\\RazorTemplate\\RazorTemplate\\CustomHealthCheck\\SqlHealthCheck.cs",
+              "RelativeToolTip": "RazorTemplate\\CustomHealthCheck\\SqlHealthCheck.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T20:31:37.512Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
