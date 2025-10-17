@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2D9CA849-B8DB-4F70-9D23-916343AE3598}|RazorTemplate\\RazorTemplate.csproj|e:\\repos\\razortemplate\\razortemplate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D9CA849-B8DB-4F70-9D23-916343AE3598}|RazorTemplate\\RazorTemplate.csproj|solutionrelative:razortemplate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D9CA849-B8DB-4F70-9D23-916343AE3598}|RazorTemplate\\RazorTemplate.csproj|e:\\repos\\razortemplate\\razortemplate\\customhealthcheck\\sqlhealthcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D9CA849-B8DB-4F70-9D23-916343AE3598}|RazorTemplate\\RazorTemplate.csproj|solutionrelative:razortemplate\\customhealthcheck\\sqlhealthcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,22 +40,9 @@
               "RelativeDocumentMoniker": "RazorTemplate\\Program.cs",
               "ToolTip": "E:\\Repos\\RazorTemplate\\RazorTemplate\\Program.cs*",
               "RelativeToolTip": "RazorTemplate\\Program.cs*",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAAFIAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAAFgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T20:47:49.675Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SqlHealthCheck.cs",
-              "DocumentMoniker": "E:\\Repos\\RazorTemplate\\RazorTemplate\\CustomHealthCheck\\SqlHealthCheck.cs",
-              "RelativeDocumentMoniker": "RazorTemplate\\CustomHealthCheck\\SqlHealthCheck.cs",
-              "ToolTip": "E:\\Repos\\RazorTemplate\\RazorTemplate\\CustomHealthCheck\\SqlHealthCheck.cs",
-              "RelativeToolTip": "RazorTemplate\\CustomHealthCheck\\SqlHealthCheck.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T20:31:37.512Z",
+              "WhenOpened": "2025-10-17T21:46:47.37Z",
               "EditorCaption": ""
             }
           ]

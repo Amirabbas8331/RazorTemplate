@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
+using RazorTemplate.BackGroundJob;
 using RazorTemplate.Context;
 using RazorTemplate.CustomHealthCheck;
 using RazorTemplate.Exceptions;
@@ -77,10 +78,17 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 app.UseHttpsRedirection();
+
 app.MapHealthChecks("/healthCheck",
     new HealthCheckOptions()
     {
-     ResponseWriter= UIResponseWriter.WriteHealthCheckUIResponse
+     ResponseWriter= UIResponseWriter.WriteHealthCheckUIResponse,
+     ResultStatusCodes =
+     {
+           [HealthStatus.Healthy]=StatusCodes.Status200OK,
+           [HealthStatus.Degraded]=StatusCodes.Status204NoContent,
+           [HealthStatus.Unhealthy]=StatusCodes.Status505HttpVersionNotsupported
+     }
     });
 app.UseRouting();
 app.UseAuthentication();
