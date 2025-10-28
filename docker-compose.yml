@@ -1,0 +1,47 @@
+
+
+services:
+  # Your ASP.NET Core RazorTemplate app
+  razortemplate:
+    build:
+      context: .
+      dockerfile: RazorTemplate/Dockerfile
+    image: ${DOCKER_REGISTRY-}razortemplate
+    container_name: razortemplate
+    ports:
+      - "8080:80"   # host:container
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - elasticsearch
+      - kibana
+    networks:
+      - elastic
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
+    container_name: es01
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=true
+      - ELASTIC_PASSWORD=_lO=3j=bBib8kwSl+XSn
+      - xpack.security.http.ssl.enabled=true
+    ports:
+      - "9200:9200"
+    networks:
+      - elastic
+  kibana:
+    image: docker.elastic.co/kibana/kibana:9.1.5
+    container_name: kib01
+    environment:
+      - ELASTICSEARCH_HOSTS=https://es01:9200
+      - ELASTICSEARCH_SSL_VERIFICATIONMODE=none
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    networks:
+      - elastic
+networks:
+  elastic:
+    driver: bridge

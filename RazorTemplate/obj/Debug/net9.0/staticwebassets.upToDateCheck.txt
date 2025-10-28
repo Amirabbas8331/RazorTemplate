@@ -1,4 +1,13 @@
+wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\Hero.jpg
+wwwroot\images\Hero2.jpg
+wwwroot\images\Hero3.jpg
+wwwroot\images\Hero4.jpg
+wwwroot\images\images (1).jpg
+wwwroot\images\images (2).jpg
+wwwroot\images\images (3).jpg
+wwwroot\images\images (4).jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -60,15 +69,6 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\site.css
-wwwroot\images\images (1).jpg
-wwwroot\images\images (2).jpg
-wwwroot\images\images (3).jpg
-wwwroot\images\images (4).jpg
-wwwroot\images\Hero.jpg
-wwwroot\images\Hero2.jpg
-wwwroot\images\Hero3.jpg
-wwwroot\images\Hero4.jpg
 E:\Repos\RazorTemplate\RazorTemplate\wwwroot\favicon.ico
 E:\Repos\RazorTemplate\RazorTemplate\wwwroot\js\site.js
 E:\Repos\RazorTemplate\RazorTemplate\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css

@@ -1,0 +1,179 @@
+name: dockercompose17900555484498651779
+services:
+  es01:
+    container_name: es01
+    environment:
+      ELASTIC_PASSWORD: MyStrongPassword123!
+      discovery.type: single-node
+      xpack.security.enabled: "true"
+      xpack.security.http.ssl.enabled: "false"
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
+    networks:
+      elastic: null
+    ports:
+      - mode: ingress
+        target: 9200
+        published: "9200"
+        protocol: tcp
+  fleet01:
+    container_name: fleet01
+    depends_on:
+      es01:
+        condition: service_started
+        required: true
+      kib01:
+        condition: service_started
+        required: true
+    environment:
+      FLEET_ENROLLMENT_TOKEN: ""
+      FLEET_SERVER_ELASTICSEARCH_HOST: http://es01:9200
+      FLEET_SERVER_ENABLE: "true"
+      KIBANA_HOST: http://kib01:5601
+    image: docker.elastic.co/beats/elastic-agent:9.1.5
+    networks:
+      elastic: null
+    ports:
+      - mode: ingress
+        target: 8220
+        published: "8220"
+        protocol: tcp
+  kib01:
+    container_name: kib01
+    depends_on:
+      es01:
+        condition: service_started
+        required: true
+    environment:
+      ELASTICSEARCH_HOSTS: http://es01:9200
+      ELASTICSEARCH_SERVICEACCOUNT_TOKEN: ""
+      xpack.encryptedSavedObjects.encryptionKey: f26a3e85d06e483a83f36ed7f9848b53
+      xpack.reporting.encryptionKey: 2013e2808ed8482b822c1f9adcb5b193
+      xpack.security.encryptionKey: fdca3d408d224e76bc4cea08c9f906fa
+    image: docker.elastic.co/kibana/kibana:9.1.5
+    networks:
+      elastic: null
+    ports:
+      - mode: ingress
+        target: 5601
+        published: "5601"
+        protocol: tcp
+  razortemplate:
+    build:
+      context: E:\Repos\RazorTemplate
+      dockerfile: RazorTemplate/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: RazorTemplate
+      target: base
+    container_name: razortemplate
+    depends_on:
+      es01:
+        condition: service_started
+        required: true
+      kib01:
+        condition: service_started
+        required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: /.nuget/fallbackpackages
+    image: razortemplate:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages  "/app/bin/Debug/net9.0/RazorTemplate.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      elastic: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "8080"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\msigaming\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\msigaming\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\msigaming\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\msigaming\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: E:\Repos\RazorTemplate\RazorTemplate
+        target: /app
+        bind:
+          create_host_path: true
+      - type: bind
+        source: E:\Repos\RazorTemplate
+        target: /src
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\msigaming\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\msigaming\.nuget\packages
+        target: /.nuget/packages
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages
+        target: /.nuget/fallbackpackages
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net6.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  elastic:
+    name: dockercompose17900555484498651779_elastic
+    driver: bridge

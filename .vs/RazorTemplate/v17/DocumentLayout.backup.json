@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "E:\\Repos\\RazorTemplate\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D9CA849-B8DB-4F70-9D23-916343AE3598}|RazorTemplate\\RazorTemplate.csproj|e:\\repos\\razortemplate\\razortemplate\\backgroundjob\\periodicbackgroundtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D9CA849-B8DB-4F70-9D23-916343AE3598}|RazorTemplate\\RazorTemplate.csproj|solutionrelative:razortemplate\\backgroundjob\\periodicbackgroundtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2D9CA849-B8DB-4F70-9D23-916343AE3598}|RazorTemplate\\RazorTemplate.csproj|e:\\repos\\razortemplate\\razortemplate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D9CA849-B8DB-4F70-9D23-916343AE3598}|RazorTemplate\\RazorTemplate.csproj|solutionrelative:razortemplate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -39,27 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PeriodicBackgroundTask.cs",
-              "DocumentMoniker": "E:\\Repos\\RazorTemplate\\RazorTemplate\\BackGroundJob\\PeriodicBackgroundTask.cs",
-              "RelativeDocumentMoniker": "RazorTemplate\\BackGroundJob\\PeriodicBackgroundTask.cs",
-              "ToolTip": "E:\\Repos\\RazorTemplate\\RazorTemplate\\BackGroundJob\\PeriodicBackgroundTask.cs",
-              "RelativeToolTip": "RazorTemplate\\BackGroundJob\\PeriodicBackgroundTask.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T22:05:36.05Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Repos\\RazorTemplate\\RazorTemplate\\Program.cs",
               "RelativeDocumentMoniker": "RazorTemplate\\Program.cs",
               "ToolTip": "E:\\Repos\\RazorTemplate\\RazorTemplate\\Program.cs",
               "RelativeToolTip": "RazorTemplate\\Program.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAAGwAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T21:54:10.564Z",
+              "WhenOpened": "2025-10-28T21:45:55.367Z",
               "EditorCaption": ""
             }
           ]

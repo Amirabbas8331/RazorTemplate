@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("c48abb68-c3d2-475e-87c7-6e04a7455af3")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("RazorTemplate")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2490a152b2a4601caf5a3c63ed9e21cf00240578")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b684bfc5e9a4ce6a8fc577e0ef8906b04a22ad56")]
 [assembly: System.Reflection.AssemblyProductAttribute("RazorTemplate")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RazorTemplate")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
