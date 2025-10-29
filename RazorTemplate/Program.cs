@@ -1,17 +1,12 @@
-﻿using Elastic.Apm.Api;
-using Elastic.Apm.AspNetCore;
-using Elastic.Apm.NetCoreAll;
-using HealthChecks.UI.Client;
+﻿using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
-using MongoDB.Driver;
 using Polly;
 using Polly.CircuitBreaker;
-using Polly.Fallback;
 using Polly.RateLimiting;
 using Polly.Retry;
 using Polly.Timeout;
@@ -19,8 +14,6 @@ using RazorTemplate.BackGroundJob;
 using RazorTemplate.Context;
 using RazorTemplate.CustomHealthCheck;
 using RazorTemplate.Exceptions;
-using System.Net.Http;
-using System.Threading;
 using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -108,7 +101,8 @@ builder.Services.AddResiliencePipeline("retry", builder =>
     });
 });
 
-
+builder.Services.AddReverseProxy()
+    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<ShopDbConext>(option=>option.UseNpgsql(builder.Configuration.GetConnectionString("Shop")))
@@ -172,5 +166,6 @@ app.UseAuthorization();
 app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
+app.MapReverseProxy();
 app.MapGet("", () => "").RequireRateLimiting("retry");
 app.Run();
