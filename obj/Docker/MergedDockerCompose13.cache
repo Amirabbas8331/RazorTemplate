@@ -1,0 +1,89 @@
+name: dockercompose17900555484498651779
+services:
+  nginx.proxy:
+    depends_on:
+      razortemplate:
+        condition: service_started
+        required: true
+    image: nginx:alpine
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "3001"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: E:\Repos\RazorTemplate\nginx-proxy.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
+        bind:
+          create_host_path: true
+  razortemplate:
+    build:
+      context: E:\Repos\RazorTemplate
+      dockerfile: RazorTemplate/Dockerfile
+    container_name: razortemplate
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+    image: razortemplate
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "8080"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\msigaming\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\msigaming\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\msigaming\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\msigaming\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  yarp.proxy:
+    build:
+      context: E:\Repos\RazorTemplate
+      dockerfile: Yarp.Proxy/Dockerfile
+    depends_on:
+      razortemplate:
+        condition: service_started
+        required: true
+    image: yarpproxy
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "3000"
+        protocol: tcp
+networks:
+  default:
+    name: dockercompose17900555484498651779_default

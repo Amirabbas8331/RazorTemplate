@@ -16,6 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RazorTemplate\RazorTemplate.csproj" />
+    <ProjectReference Include="..\RazorTemplate\RazorTemplate.Presentation.csproj" />
   </ItemGroup>
 </Project>

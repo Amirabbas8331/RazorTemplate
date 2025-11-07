@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorTemplate", "RazorTemplate\RazorTemplate.csproj", "{2D9CA849-B8DB-4F70-9D23-916343AE3598}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorTemplate.Presentation", "RazorTemplate\RazorTemplate.Presentation.csproj", "{2D9CA849-B8DB-4F70-9D23-916343AE3598}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeMangement", "TimeMangement\TimeMangement.csproj", "{ECA29CFF-6A20-43A1-B935-E4BF3B28B582}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorTemplate.Domain", "..\RazorTemplate.Domain\RazorTemplate.Domain.csproj", "{7AB71416-C505-4BBE-8A11-057F420E09D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorTemplate.Infrastructure", "..\RazorTemplate.Infrastructure\RazorTemplate.Infrastructure.csproj", "{1BCC8DE5-BB9C-4D9F-B007-9B43ECF4C47E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorTemplate.Application", "..\RazorTemplate.Application\RazorTemplate.Application.csproj", "{B7EA8115-AC2C-4E51-8F78-EE7D1156055C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB71416-C505-4BBE-8A11-057F420E09D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB71416-C505-4BBE-8A11-057F420E09D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB71416-C505-4BBE-8A11-057F420E09D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB71416-C505-4BBE-8A11-057F420E09D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BCC8DE5-BB9C-4D9F-B007-9B43ECF4C47E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BCC8DE5-BB9C-4D9F-B007-9B43ECF4C47E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BCC8DE5-BB9C-4D9F-B007-9B43ECF4C47E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BCC8DE5-BB9C-4D9F-B007-9B43ECF4C47E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7EA8115-AC2C-4E51-8F78-EE7D1156055C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7EA8115-AC2C-4E51-8F78-EE7D1156055C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7EA8115-AC2C-4E51-8F78-EE7D1156055C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7EA8115-AC2C-4E51-8F78-EE7D1156055C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

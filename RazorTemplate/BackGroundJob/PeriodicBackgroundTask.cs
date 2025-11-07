@@ -1,4 +1,7 @@
 ﻿
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+
 namespace RazorTemplate.BackGroundJob;
 
 public class PeriodicBackgroundTask : BackgroundService
